@@ -1,0 +1,9 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "live",
+  "status": "incomplete",
+  "steps": [],
+  "quotes": {},
+  "scripts": {},
+  "reason": "Configure LLM_BASE_URL and LLM_MODEL for live mode."
+}

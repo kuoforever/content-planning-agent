@@ -1,0 +1,11 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "mock",
+  "status": "needs_input",
+  "steps": [],
+  "quotes": {},
+  "scripts": {},
+  "missing": [
+    "budget"
+  ]
+}
