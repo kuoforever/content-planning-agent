@@ -1,0 +1,18 @@
+{
+  "standard": {
+    "asset": "studio",
+    "description": "棚拍展示镜头",
+    "asset_cost": 7,
+    "script_cost": 5,
+    "asset_minutes": 80,
+    "script_minutes": 60
+  },
+  "economy": {
+    "asset": "cards",
+    "description": "轻量图文卡片",
+    "asset_cost": 5,
+    "script_cost": 3,
+    "asset_minutes": 50,
+    "script_minutes": 40
+  }
+}

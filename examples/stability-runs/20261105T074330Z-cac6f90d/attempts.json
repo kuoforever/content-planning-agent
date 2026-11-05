@@ -1,0 +1,62 @@
+[
+  {
+    "case": "normal",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 8.578,
+    "saved_count": 1,
+    "requests": 4,
+    "reported_tokens": 2432,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "overbudget",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 11.657,
+    "saved_count": 1,
+    "requests": 6,
+    "reported_tokens": 4010,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "normal",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 6.625,
+    "saved_count": 1,
+    "requests": 4,
+    "reported_tokens": 2450,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "overbudget",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 9.187,
+    "saved_count": 1,
+    "requests": 6,
+    "reported_tokens": 4142,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "normal",
+    "repeat": 3,
+    "classification": "pass",
+    "seconds": 6.312,
+    "saved_count": 1,
+    "requests": 4,
+    "reported_tokens": 2350,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "overbudget",
+    "repeat": 3,
+    "classification": "pass",
+    "seconds": 11.406,
+    "saved_count": 1,
+    "requests": 6,
+    "reported_tokens": 4237,
+    "calls_without_usage": 0
+  }
+]

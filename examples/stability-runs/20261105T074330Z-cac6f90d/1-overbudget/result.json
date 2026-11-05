@@ -1,0 +1,402 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "live",
+  "status": "completed",
+  "steps": [
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "generate_script",
+      "status": "success"
+    },
+    {
+      "action": "save_plan",
+      "status": "success"
+    }
+  ],
+  "quotes": {
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
+      "activities": [
+        {
+          "activity": "棚拍展示镜头",
+          "cost": 7,
+          "minutes": 80
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 5,
+          "minutes": 60
+        }
+      ],
+      "total_cost": 12,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 2,
+      "feasible": false
+    },
+    "q-cards": {
+      "quote_id": "q-cards",
+      "asset": "cards",
+      "activities": [
+        {
+          "activity": "轻量图文卡片",
+          "cost": 5,
+          "minutes": 50
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 3,
+          "minutes": 40
+        }
+      ],
+      "total_cost": 8,
+      "minutes": 90,
+      "estimated_finish": "2030-11-04T10:30:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 0,
+      "feasible": true
+    }
+  },
+  "scripts": {
+    "q-cards": [
+      {
+        "shot": "轻量图文卡片",
+        "caption": "秋日摄影征集"
+      },
+      {
+        "shot": "主题说明卡",
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+      }
+    ]
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "评估标准方案studio是否符合预算与截止时间要求",
+        "tier": "standard"
+      },
+      "result": {
+        "asset": "studio",
+        "description": "棚拍展示镜头"
+      }
+    },
+    {
+      "step": 2,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "评估studio方案成本和执行期限",
+        "asset": "studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 7,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 12,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 2,
+        "feasible": false
+      }
+    },
+    {
+      "step": 3,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "标准方案超预算，寻求经济方案替代",
+        "tier": "economy"
+      },
+      "result": {
+        "asset": "cards",
+        "description": "轻量图文卡片"
+      }
+    },
+    {
+      "step": 4,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "评估经济方案cards成本与时间表现",
+        "asset": "cards"
+      },
+      "result": {
+        "quote_id": "q-cards",
+        "asset": "cards",
+        "activities": [
+          {
+            "activity": "轻量图文卡片",
+            "cost": 5,
+            "minutes": 50
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 3,
+            "minutes": 40
+          }
+        ],
+        "total_cost": 8,
+        "minutes": 90,
+        "estimated_finish": "2030-11-04T10:30:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 0,
+        "feasible": true
+      }
+    },
+    {
+      "step": 5,
+      "action": "generate_script",
+      "arguments": {
+        "reason": "经济方案within budget and deadline",
+        "quote_id": "q-cards"
+      },
+      "result": {
+        "quote_id": "q-cards",
+        "script": [
+          {
+            "shot": "轻量图文卡片",
+            "caption": "秋日摄影征集"
+          },
+          {
+            "shot": "主题说明卡",
+            "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+          }
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "save_plan",
+      "arguments": {
+        "reason": "保存预算内且赶得上截止的经济方案执行计划",
+        "quote_id": "q-cards"
+      },
+      "result": {
+        "plan": {
+          "quote_id": "q-cards",
+          "asset": "cards",
+          "activities": [
+            {
+              "activity": "轻量图文卡片",
+              "cost": 5,
+              "minutes": 50
+            },
+            {
+              "activity": "撰写并校对脚本",
+              "cost": 3,
+              "minutes": 40
+            }
+          ],
+          "total_cost": 8,
+          "minutes": 90,
+          "estimated_finish": "2030-11-04T10:30:00+08:00",
+          "time_gap_seconds": 0,
+          "budget_gap": 0,
+          "feasible": true,
+          "theme": "秋日摄影征集",
+          "script": [
+            {
+              "shot": "轻量图文卡片",
+              "caption": "秋日摄影征集"
+            },
+            {
+              "shot": "主题说明卡",
+              "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+            }
+          ],
+          "plan_id": "c265ffbe-1540-4138-b736-c31e0ca9f19f"
+        }
+      }
+    }
+  ],
+  "model_calls": [
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQGGDx4GFfdEsOzTCsp4u2RXLsL",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 29,
+        "total_tokens": 426,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQI0Mw6rjXs8KYEpi6xoSEw25IF",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 450,
+        "completion_tokens": 26,
+        "total_tokens": 476,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQKPBj8TeesFxLeukeIEcuntrUB",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 605,
+        "completion_tokens": 29,
+        "total_tokens": 634,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQMdp5zAOtbohGyT7ZBUu4ERoxa",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 659,
+        "completion_tokens": 27,
+        "total_tokens": 686,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQOpcIRrcWDnIBVUzvK80tiifAB",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 816,
+        "completion_tokens": 26,
+        "total_tokens": 842,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQQPsPcsamXmSE6UjnG7Ey269o5",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 913,
+        "completion_tokens": 33,
+        "total_tokens": 946,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    }
+  ],
+  "plan": {
+    "quote_id": "q-cards",
+    "asset": "cards",
+    "activities": [
+      {
+        "activity": "轻量图文卡片",
+        "cost": 5,
+        "minutes": 50
+      },
+      {
+        "activity": "撰写并校对脚本",
+        "cost": 3,
+        "minutes": 40
+      }
+    ],
+    "total_cost": 8,
+    "minutes": 90,
+    "estimated_finish": "2030-11-04T10:30:00+08:00",
+    "time_gap_seconds": 0,
+    "budget_gap": 0,
+    "feasible": true,
+    "theme": "秋日摄影征集",
+    "script": [
+      {
+        "shot": "轻量图文卡片",
+        "caption": "秋日摄影征集"
+      },
+      {
+        "shot": "主题说明卡",
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+      }
+    ],
+    "plan_id": "c265ffbe-1540-4138-b736-c31e0ca9f19f"
+  }
+}

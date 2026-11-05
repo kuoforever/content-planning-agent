@@ -1,0 +1,288 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "live",
+  "status": "completed",
+  "steps": [
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "generate_script",
+      "status": "success"
+    },
+    {
+      "action": "save_plan",
+      "status": "success"
+    }
+  ],
+  "quotes": {
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
+      "activities": [
+        {
+          "activity": "棚拍展示镜头",
+          "cost": 4,
+          "minutes": 80
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 5,
+          "minutes": 60
+        }
+      ],
+      "total_cost": 9,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 0,
+      "feasible": true
+    }
+  },
+  "scripts": {
+    "q-studio": [
+      {
+        "shot": "棚拍展示镜头",
+        "caption": "秋日摄影征集"
+      },
+      {
+        "shot": "主题说明卡",
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+      }
+    ]
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "Initial search to find a standard tier asset matching candidate 'studio' for 秋日摄影征集 campaign within budget 10",
+        "tier": "standard"
+      },
+      "result": {
+        "asset": "studio",
+        "description": "棚拍展示镜头"
+      }
+    },
+    {
+      "step": 2,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "Estimate plan for standard tier asset 'studio' for 秋日摄影征集 campaign within budget 10",
+        "asset": "studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 4,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 9,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 0,
+        "feasible": true
+      }
+    },
+    {
+      "step": 3,
+      "action": "generate_script",
+      "arguments": {
+        "reason": "Generate script for feasible standard tier quote 'q-studio' for 秋日摄影征集 campaign within budget 10 and deadline 2030-11-04T18:00:00+08:00",
+        "quote_id": "q-studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "script": [
+          {
+            "shot": "棚拍展示镜头",
+            "caption": "秋日摄影征集"
+          },
+          {
+            "shot": "主题说明卡",
+            "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "save_plan",
+      "arguments": {
+        "reason": "Save feasible plan for standard tier asset 'studio' matching budget 10 and deadline 2030-11-04T18:00:00+08:00 for 秋日摄影征集 campaign",
+        "quote_id": "q-studio"
+      },
+      "result": {
+        "plan": {
+          "quote_id": "q-studio",
+          "asset": "studio",
+          "activities": [
+            {
+              "activity": "棚拍展示镜头",
+              "cost": 4,
+              "minutes": 80
+            },
+            {
+              "activity": "撰写并校对脚本",
+              "cost": 5,
+              "minutes": 60
+            }
+          ],
+          "total_cost": 9,
+          "minutes": 140,
+          "estimated_finish": "2030-11-04T11:20:00+08:00",
+          "time_gap_seconds": 0,
+          "budget_gap": 0,
+          "feasible": true,
+          "theme": "秋日摄影征集",
+          "script": [
+            {
+              "shot": "棚拍展示镜头",
+              "caption": "秋日摄影征集"
+            },
+            {
+              "shot": "主题说明卡",
+              "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+            }
+          ],
+          "plan_id": "403d5017-919c-4975-a4a0-0731ab5cacc6"
+        }
+      }
+    }
+  ],
+  "model_calls": [
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQSCkKQAkOT6ttkOb4y2JHvNxT7",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 41,
+        "total_tokens": 438,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQTg6KgmrxSAWIOFFomU11p1OsU",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 462,
+        "completion_tokens": 38,
+        "total_tokens": 500,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQVsaysQDCEnIFATDuRI57STxxy",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 629,
+        "completion_tokens": 62,
+        "total_tokens": 691,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmQXpQrZpuTJ4nKC9briXcjeconF",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 761,
+        "completion_tokens": 60,
+        "total_tokens": 821,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    }
+  ],
+  "plan": {
+    "quote_id": "q-studio",
+    "asset": "studio",
+    "activities": [
+      {
+        "activity": "棚拍展示镜头",
+        "cost": 4,
+        "minutes": 80
+      },
+      {
+        "activity": "撰写并校对脚本",
+        "cost": 5,
+        "minutes": 60
+      }
+    ],
+    "total_cost": 9,
+    "minutes": 140,
+    "estimated_finish": "2030-11-04T11:20:00+08:00",
+    "time_gap_seconds": 0,
+    "budget_gap": 0,
+    "feasible": true,
+    "theme": "秋日摄影征集",
+    "script": [
+      {
+        "shot": "棚拍展示镜头",
+        "caption": "秋日摄影征集"
+      },
+      {
+        "shot": "主题说明卡",
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+      }
+    ],
+    "plan_id": "403d5017-919c-4975-a4a0-0731ab5cacc6"
+  }
+}
