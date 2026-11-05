@@ -1,0 +1,280 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "live",
+  "status": "incomplete",
+  "steps": [
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "stop",
+      "status": "success"
+    }
+  ],
+  "quotes": {
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
+      "activities": [
+        {
+          "activity": "棚拍展示镜头",
+          "cost": 4,
+          "minutes": 80
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 5,
+          "minutes": 60
+        }
+      ],
+      "total_cost": 9,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 3,
+      "feasible": false
+    },
+    "q-cards": {
+      "quote_id": "q-cards",
+      "asset": "cards",
+      "activities": [
+        {
+          "activity": "轻量图文卡片",
+          "cost": 5,
+          "minutes": 50
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 3,
+          "minutes": 40
+        }
+      ],
+      "total_cost": 8,
+      "minutes": 90,
+      "estimated_finish": "2030-11-04T10:30:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 2,
+      "feasible": false
+    }
+  },
+  "scripts": {},
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "Evaluate standard tier candidate 'studio' for the 秋日摄影征集 campaign within the given budget and deadline constraints.",
+        "tier": "standard"
+      },
+      "result": {
+        "asset": "studio",
+        "description": "棚拍展示镜头"
+      }
+    },
+    {
+      "step": 2,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "Estimate cost and feasibility for 'studio' asset for the 秋日摄影征集 campaign to check budget and deadline compliance.",
+        "asset": "studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 4,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 9,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 3,
+        "feasible": false
+      }
+    },
+    {
+      "step": 3,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "Original 'studio' asset quote exceeds budget. Searching for economy tier alternatives for 秋日摄影征集 campaign.",
+        "tier": "economy"
+      },
+      "result": {
+        "asset": "cards",
+        "description": "轻量图文卡片"
+      }
+    },
+    {
+      "step": 4,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "Estimate cost and time for 'cards' asset in economy tier as a budget-friendly alternative for 秋日摄影征集 campaign.",
+        "asset": "cards"
+      },
+      "result": {
+        "quote_id": "q-cards",
+        "asset": "cards",
+        "activities": [
+          {
+            "activity": "轻量图文卡片",
+            "cost": 5,
+            "minutes": 50
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 3,
+            "minutes": 40
+          }
+        ],
+        "total_cost": 8,
+        "minutes": 90,
+        "estimated_finish": "2030-11-04T10:30:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 2,
+        "feasible": false
+      }
+    },
+    {
+      "step": 5,
+      "action": "stop",
+      "arguments": {
+        "reason": "Both standard tier 'studio' and economy tier 'cards' alternatives exceed the given budget of 6; cannot complete the campaign within budget constraints even with substitutions."
+      },
+      "result": {
+        "stopped": "Both standard tier 'studio' and economy tier 'cards' alternatives exceed the given budget of 6; cannot complete the campaign within budget constraints even with substitutions."
+      }
+    }
+  ],
+  "model_calls": [
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfFLBpCqShMboAjLRHw1R5N2a0d",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 39,
+        "total_tokens": 436,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfGqmZIuFt0CWMFz54kfwm2txCr",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 460,
+        "completion_tokens": 41,
+        "total_tokens": 501,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfIcspbXFIKaBMtt0XHice070iZ",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 630,
+        "completion_tokens": 39,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfKaJyvOJX1ccGf5TIph68E2lo3",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 694,
+        "completion_tokens": 42,
+        "total_tokens": 736,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfLZfx5FlXZ69W6NlhknYk8Rgsf",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 866,
+        "completion_tokens": 44,
+        "total_tokens": 910,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    }
+  ],
+  "reason": "Both standard tier 'studio' and economy tier 'cards' alternatives exceed the given budget of 6; cannot complete the campaign within budget constraints even with substitutions.",
+  "stop_classification": "all_candidates_infeasible",
+  "feasibility_verified": true
+}

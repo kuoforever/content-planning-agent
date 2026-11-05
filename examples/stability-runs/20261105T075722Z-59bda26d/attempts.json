@@ -1,0 +1,52 @@
+[
+  {
+    "case": "impossible",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 8.719,
+    "saved_count": 0,
+    "requests": 5,
+    "reported_tokens": 3200,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "late",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 11.531,
+    "saved_count": 0,
+    "requests": 6,
+    "reported_tokens": 4424,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "failure",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 7.734,
+    "saved_count": 0,
+    "requests": 5,
+    "reported_tokens": 3242,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "impossible",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 9.938,
+    "saved_count": 0,
+    "requests": 5,
+    "reported_tokens": 3199,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "late",
+    "repeat": 2,
+    "classification": "model_request_error",
+    "seconds": 24.719,
+    "saved_count": 0,
+    "requests": 3,
+    "reported_tokens": 975,
+    "calls_without_usage": 1
+  }
+]

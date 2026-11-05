@@ -1,0 +1,41 @@
+{
+  "mode": "live",
+  "planned": 9,
+  "attempted": 5,
+  "unrun": 4,
+  "requests": 24,
+  "reported_tokens": 15040,
+  "calls_without_usage": 1,
+  "cases": {
+    "impossible": {
+      "attempts": 2,
+      "counts": {
+        "pass": 2
+      },
+      "passed": 2,
+      "success_rate_all_attempts": 1.0,
+      "success_rate_evaluable": 1.0
+    },
+    "late": {
+      "attempts": 2,
+      "counts": {
+        "pass": 1,
+        "model_request_error": 1
+      },
+      "passed": 1,
+      "success_rate_all_attempts": 0.5,
+      "success_rate_evaluable": 1.0
+    },
+    "failure": {
+      "attempts": 1,
+      "counts": {
+        "pass": 1
+      },
+      "passed": 1,
+      "success_rate_all_attempts": 1.0,
+      "success_rate_evaluable": 1.0
+    }
+  },
+  "acceptance": "not_passed",
+  "interpretation": "Mock verifies the harness only. Live rates describe this small fixed sample; they do not prove general reliability."
+}

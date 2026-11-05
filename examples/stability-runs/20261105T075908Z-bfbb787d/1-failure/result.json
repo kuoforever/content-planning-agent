@@ -1,0 +1,259 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "live",
+  "status": "incomplete",
+  "steps": [
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "generate_script",
+      "status": "success"
+    },
+    {
+      "action": "save_plan",
+      "status": "failed"
+    },
+    {
+      "action": "stop",
+      "status": "success"
+    }
+  ],
+  "quotes": {
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
+      "activities": [
+        {
+          "activity": "棚拍展示镜头",
+          "cost": 4,
+          "minutes": 80
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 5,
+          "minutes": 60
+        }
+      ],
+      "total_cost": 9,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 0,
+      "feasible": true
+    }
+  },
+  "scripts": {
+    "q-studio": [
+      {
+        "shot": "棚拍展示镜头",
+        "caption": "秋日摄影征集"
+      },
+      {
+        "shot": "主题说明卡",
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+      }
+    ]
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "Evaluate the standard tier candidate asset for 秋日摄影征集 campaign within budget and deadline",
+        "tier": "standard"
+      },
+      "result": {
+        "asset": "studio",
+        "description": "棚拍展示镜头"
+      }
+    },
+    {
+      "step": 2,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "Estimate cost and feasibility of standard tier asset 'studio' for 秋日摄影征集 campaign under 10 budget and deadline 2030-11-04T18:00:00+08:00",
+        "asset": "studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 4,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 9,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 0,
+        "feasible": true
+      }
+    },
+    {
+      "step": 3,
+      "action": "generate_script",
+      "arguments": {
+        "reason": "Generate editable content script for feasible standard tier asset 'studio' with quote q-studio for 秋日摄影征集 campaign",
+        "quote_id": "q-studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "script": [
+          {
+            "shot": "棚拍展示镜头",
+            "caption": "秋日摄影征集"
+          },
+          {
+            "shot": "主题说明卡",
+            "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "save_plan",
+      "arguments": {
+        "reason": "Save the feasible standard tier plan with quote q-studio for campaign 秋日摄影征集 within budget and deadline",
+        "quote_id": "q-studio"
+      },
+      "result": {
+        "error": "injected save failure"
+      }
+    },
+    {
+      "step": 5,
+      "action": "stop",
+      "arguments": {
+        "reason": "Failed to save the plan for campaign 秋日摄影征集 due to injected save failure; task incomplete"
+      },
+      "result": {
+        "stopped": "Failed to save the plan for campaign 秋日摄影征集 due to injected save failure; task incomplete"
+      }
+    }
+  ],
+  "model_calls": [
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfXDkkRn0EYY27mrTGvMsTDnsgF",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 34,
+        "total_tokens": 431,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfZbmabgw9Dbtn9ucEEV3ElwWg7",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 455,
+        "completion_tokens": 59,
+        "total_tokens": 514,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfbMenaTXpBC9TVk21wSm2RripJ",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 643,
+        "completion_tokens": 44,
+        "total_tokens": 687,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfcB4BFo1jFg3KYpA2zx2rujjWU",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 757,
+        "completion_tokens": 42,
+        "total_tokens": 799,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmfeCJs5LHjSudlGKV0iVyA6VqwZ",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 816,
+        "completion_tokens": 32,
+        "total_tokens": 848,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    }
+  ],
+  "reason": "Failed to save the plan for campaign 秋日摄影征集 due to injected save failure; task incomplete",
+  "stop_classification": "model_stopped",
+  "feasibility_verified": false
+}
