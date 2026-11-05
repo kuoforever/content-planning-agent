@@ -1,0 +1,317 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "live",
+  "status": "incomplete",
+  "steps": [
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "stop",
+      "status": "success"
+    }
+  ],
+  "quotes": {
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
+      "activities": [
+        {
+          "activity": "棚拍展示镜头",
+          "cost": 4,
+          "minutes": 80
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 5,
+          "minutes": 60
+        }
+      ],
+      "total_cost": 9,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
+      "time_gap_seconds": 4800.0,
+      "budget_gap": 0,
+      "feasible": false
+    },
+    "q-cards": {
+      "quote_id": "q-cards",
+      "asset": "cards",
+      "activities": [
+        {
+          "activity": "轻量图文卡片",
+          "cost": 5,
+          "minutes": 50
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 3,
+          "minutes": 40
+        }
+      ],
+      "total_cost": 8,
+      "minutes": 90,
+      "estimated_finish": "2030-11-04T10:30:00+08:00",
+      "time_gap_seconds": 1800.0,
+      "budget_gap": 0,
+      "feasible": false
+    }
+  },
+  "scripts": {},
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "Evaluate the standard tier campaign asset 'studio' for the autumn photography contest within budget 10 and deadline 2030-11-04T10:00:00+08:00",
+        "tier": "standard"
+      },
+      "result": {
+        "asset": "studio",
+        "description": "棚拍展示镜头"
+      }
+    },
+    {
+      "step": 2,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "Estimate cost and feasibility of 'studio' asset for the campaign demo '秋日摄影征集' within budget 10 and meeting deadline",
+        "asset": "studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 4,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 9,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 4800.0,
+        "budget_gap": 0,
+        "feasible": false
+      }
+    },
+    {
+      "step": 3,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "Original standard asset 'studio' costs within budget but misses deadline, searching for economy tier assets that might be quicker for campaign '秋日摄影征集'",
+        "tier": "economy"
+      },
+      "result": {
+        "asset": "cards",
+        "description": "轻量图文卡片"
+      }
+    },
+    {
+      "step": 4,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "Estimate cost and feasibility of economy tier asset 'cards' for campaign '秋日摄影征集' to meet budget 10 and deadline",
+        "asset": "cards"
+      },
+      "result": {
+        "quote_id": "q-cards",
+        "asset": "cards",
+        "activities": [
+          {
+            "activity": "轻量图文卡片",
+            "cost": 5,
+            "minutes": 50
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 3,
+            "minutes": 40
+          }
+        ],
+        "total_cost": 8,
+        "minutes": 90,
+        "estimated_finish": "2030-11-04T10:30:00+08:00",
+        "time_gap_seconds": 1800.0,
+        "budget_gap": 0,
+        "feasible": false
+      }
+    },
+    {
+      "step": 5,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "Evaluate another economy tier option in the synthetic asset catalog to meet the hard deadline and budget for campaign '秋日摄影征集'",
+        "tier": "economy"
+      },
+      "result": {
+        "asset": "cards",
+        "description": "轻量图文卡片"
+      }
+    },
+    {
+      "step": 6,
+      "action": "stop",
+      "arguments": {
+        "reason": "No other economy assets available and the only economy asset 'cards' still misses the hard deadline. Task infeasible within hard constraints of budget 10 and deadline 2030-11-04T10:00:00+08:00"
+      },
+      "result": {
+        "stopped": "No other economy assets available and the only economy asset 'cards' still misses the hard deadline. Task infeasible within hard constraints of budget 10 and deadline 2030-11-04T10:00:00+08:00"
+      }
+    }
+  ],
+  "model_calls": [
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-Egmdhd07uv8AsZ3AvBi6WDT4NDXkf",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 54,
+        "total_tokens": 451,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmdjHzw3IdIkKAfPw6ZY2TseHFrA",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 475,
+        "completion_tokens": 45,
+        "total_tokens": 520,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmdlqOKK4EMYBtghVfIvDxQrDtLy",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 652,
+        "completion_tokens": 49,
+        "total_tokens": 701,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-Egmdnj0HtHJCddAAi17AhG0vSYlUa",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 726,
+        "completion_tokens": 45,
+        "total_tokens": 771,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmdoCUwXJOi0KrcLZR5uZsW0sSFL",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 904,
+        "completion_tokens": 44,
+        "total_tokens": 948,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    },
+    {
+      "requested_model": "gpt-4.1-mini",
+      "response_id": "chatcmpl-EgmdqMSWKS88a87XsSPYRAYeMSrLp",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "usage": {
+        "prompt_tokens": 973,
+        "completion_tokens": 60,
+        "total_tokens": 1033,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "status": "received"
+    }
+  ],
+  "reason": "No other economy assets available and the only economy asset 'cards' still misses the hard deadline. Task infeasible within hard constraints of budget 10 and deadline 2030-11-04T10:00:00+08:00",
+  "stop_classification": "all_candidates_infeasible",
+  "feasibility_verified": true
+}

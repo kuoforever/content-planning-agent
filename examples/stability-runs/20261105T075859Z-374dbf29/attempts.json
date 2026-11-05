@@ -1,0 +1,12 @@
+[
+  {
+    "case": "failure",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 8.625,
+    "saved_count": 0,
+    "requests": 5,
+    "reported_tokens": 3180,
+    "calls_without_usage": 0
+  }
+]
