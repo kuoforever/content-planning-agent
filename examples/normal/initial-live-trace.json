@@ -1,0 +1,100 @@
+{
+  "mode": "live",
+  "steps": [
+    {
+      "step": 1,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "User requested evaluation of the selected standard asset (studio) for feasibility within budget and deadline for 秋日摄影征集 campaign.",
+        "asset": "studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 4,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 9,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 0,
+        "feasible": true
+      }
+    },
+    {
+      "step": 2,
+      "action": "generate_script",
+      "arguments": {
+        "reason": "Generate editable script for feasible standard studio plan within budget 10 and deadline 2030-11-04T18:00:00+08:00 for 秋日摄影征集 campaign.",
+        "quote_id": "q-studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "script": [
+          {
+            "shot": "棚拍展示镜头",
+            "caption": "秋日摄影征集"
+          },
+          {
+            "shot": "主题说明卡",
+            "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+          }
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "save_plan",
+      "arguments": {
+        "reason": "Saving feasible standard studio plan with budget 10 and deadline 2030-11-04T18:00:00+08:00 for 秋日摄影征集 campaign.",
+        "quote_id": "q-studio"
+      },
+      "result": {
+        "plan": {
+          "quote_id": "q-studio",
+          "asset": "studio",
+          "activities": [
+            {
+              "activity": "棚拍展示镜头",
+              "cost": 4,
+              "minutes": 80
+            },
+            {
+              "activity": "撰写并校对脚本",
+              "cost": 5,
+              "minutes": 60
+            }
+          ],
+          "total_cost": 9,
+          "minutes": 140,
+          "estimated_finish": "2030-11-04T11:20:00+08:00",
+          "time_gap_seconds": 0,
+          "budget_gap": 0,
+          "feasible": true,
+          "theme": "秋日摄影征集",
+          "script": [
+            {
+              "shot": "棚拍展示镜头",
+              "caption": "秋日摄影征集"
+            },
+            {
+              "shot": "主题说明卡",
+              "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+            }
+          ],
+          "plan_id": "1c6ea983-e4cc-4abe-a75b-5cc223433c5a"
+        }
+      }
+    }
+  ]
+}

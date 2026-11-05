@@ -35,7 +35,8 @@ def live(messages):
     headers = {"Content-Type": "application/json"}
     if key := os.getenv("LLM_API_KEY"):
         headers["Authorization"] = "Bearer " + key
-    payload = {"model": model, "messages": messages, "tools": definitions(), "tool_choice": "required"}
+    payload = {"model": model, "messages": messages, "tools": definitions(), "tool_choice": "required",
+               "max_completion_tokens": 180, "parallel_tool_calls": False}
     req = urllib.request.Request(base.rstrip("/") + "/chat/completions",
                                  json.dumps(payload).encode(), headers)
     try:

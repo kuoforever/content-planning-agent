@@ -1,0 +1,57 @@
+{
+  "mode": "live",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "reason": "验证用户指定候选资产studio的存在性及可行性",
+        "tier": "standard"
+      },
+      "result": {
+        "asset": "studio",
+        "description": "棚拍展示镜头"
+      }
+    },
+    {
+      "step": 2,
+      "action": "estimate_plan",
+      "arguments": {
+        "reason": "评估用户选定的标准棚拍方案的报价与脚本套餐",
+        "asset": "studio"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 7,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 12,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 2,
+        "feasible": false
+      }
+    },
+    {
+      "step": 3,
+      "action": "stop",
+      "arguments": {
+        "reason": "选定的标准方案（studio）的总成本12超出预算10，无法执行"
+      },
+      "result": {
+        "stopped": "选定的标准方案（studio）的总成本12超出预算10，无法执行"
+      }
+    }
+  ]
+}

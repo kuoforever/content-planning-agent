@@ -21,73 +21,73 @@
     }
   ],
   "quotes": {
-    "q-cards": {
-      "quote_id": "q-cards",
-      "asset": "cards",
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
       "activities": [
         {
-          "activity": "轻量图文卡片",
-          "cost": 5,
-          "minutes": 50
+          "activity": "棚拍展示镜头",
+          "cost": 4,
+          "minutes": 80
         },
         {
           "activity": "撰写并校对脚本",
-          "cost": 3,
-          "minutes": 40
+          "cost": 5,
+          "minutes": 60
         }
       ],
-      "total_cost": 8,
-      "minutes": 90,
-      "estimated_finish": "2030-11-04T10:30:00+08:00",
+      "total_cost": 9,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
       "time_gap_seconds": 0,
       "budget_gap": 0,
       "feasible": true
     }
   },
   "scripts": {
-    "q-cards": [
+    "q-studio": [
       {
-        "shot": "轻量图文卡片",
-        "caption": "绉嬫棩鎽勫奖寰侀泦"
+        "shot": "棚拍展示镜头",
+        "caption": "秋日摄影征集"
       },
       {
         "shot": "主题说明卡",
-        "caption": "本期聚焦绉嬫棩鎽勫奖寰侀泦，你最想了解哪一点？"
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
       }
     ]
   },
   "plan": {
-    "quote_id": "q-cards",
-    "asset": "cards",
+    "quote_id": "q-studio",
+    "asset": "studio",
     "activities": [
       {
-        "activity": "轻量图文卡片",
-        "cost": 5,
-        "minutes": 50
+        "activity": "棚拍展示镜头",
+        "cost": 4,
+        "minutes": 80
       },
       {
         "activity": "撰写并校对脚本",
-        "cost": 3,
-        "minutes": 40
+        "cost": 5,
+        "minutes": 60
       }
     ],
-    "total_cost": 8,
-    "minutes": 90,
-    "estimated_finish": "2030-11-04T10:30:00+08:00",
+    "total_cost": 9,
+    "minutes": 140,
+    "estimated_finish": "2030-11-04T11:20:00+08:00",
     "time_gap_seconds": 0,
     "budget_gap": 0,
     "feasible": true,
-    "theme": "绉嬫棩鎽勫奖寰侀泦",
+    "theme": "秋日摄影征集",
     "script": [
       {
-        "shot": "轻量图文卡片",
-        "caption": "绉嬫棩鎽勫奖寰侀泦"
+        "shot": "棚拍展示镜头",
+        "caption": "秋日摄影征集"
       },
       {
         "shot": "主题说明卡",
-        "caption": "本期聚焦绉嬫棩鎽勫奖寰侀泦，你最想了解哪一点？"
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
       }
     ],
-    "plan_id": "c39a180e-6893-4943-8681-db9f37b082da"
+    "plan_id": "f1ed2842-7d6e-4c2e-b539-e767b0d39283"
   }
 }

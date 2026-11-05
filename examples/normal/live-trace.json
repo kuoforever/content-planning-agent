@@ -5,39 +5,39 @@
       "step": 1,
       "action": "search_assets",
       "arguments": {
-        "reason": "To find suitable assets for a campaign about 绉嬫棩鎽勫奖寰侀泦 within the budget and deadline.",
-        "tier": "economy"
+        "reason": "Evaluate the standard candidate asset 'studio' for an autumn photography contest campaign within budget and before deadline.",
+        "tier": "standard"
       },
       "result": {
-        "asset": "cards",
-        "description": "轻量图文卡片"
+        "asset": "studio",
+        "description": "棚拍展示镜头"
       }
     },
     {
       "step": 2,
       "action": "estimate_plan",
       "arguments": {
-        "reason": "Estimate cost and success with 'cards' asset for the campaign about 绉嬫棩鎽勫奖寰侀泦 within the budget and deadline.",
-        "asset": "cards"
+        "reason": "Estimate cost and feasibility for the 'studio' asset for the autumn photography contest campaign within budget and deadline.",
+        "asset": "studio"
       },
       "result": {
-        "quote_id": "q-cards",
-        "asset": "cards",
+        "quote_id": "q-studio",
+        "asset": "studio",
         "activities": [
           {
-            "activity": "轻量图文卡片",
-            "cost": 5,
-            "minutes": 50
+            "activity": "棚拍展示镜头",
+            "cost": 4,
+            "minutes": 80
           },
           {
             "activity": "撰写并校对脚本",
-            "cost": 3,
-            "minutes": 40
+            "cost": 5,
+            "minutes": 60
           }
         ],
-        "total_cost": 8,
-        "minutes": 90,
-        "estimated_finish": "2030-11-04T10:30:00+08:00",
+        "total_cost": 9,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
         "time_gap_seconds": 0,
         "budget_gap": 0,
         "feasible": true
@@ -47,19 +47,19 @@
       "step": 3,
       "action": "generate_script",
       "arguments": {
-        "reason": "Generate editable script for 'cards' asset campaign to finalize the plan for 绉嬫棩鎽勫奖寰侀泦 within budget and deadline.",
-        "quote_id": "q-cards"
+        "reason": "Generate an editable script for the autumn photography campaign using the feasible 'studio' quote within the budget of 10 and deadline.",
+        "quote_id": "q-studio"
       },
       "result": {
-        "quote_id": "q-cards",
+        "quote_id": "q-studio",
         "script": [
           {
-            "shot": "轻量图文卡片",
-            "caption": "绉嬫棩鎽勫奖寰侀泦"
+            "shot": "棚拍展示镜头",
+            "caption": "秋日摄影征集"
           },
           {
             "shot": "主题说明卡",
-            "caption": "本期聚焦绉嬫棩鎽勫奖寰侀泦，你最想了解哪一点？"
+            "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
           }
         ]
       }
@@ -68,43 +68,43 @@
       "step": 4,
       "action": "save_plan",
       "arguments": {
-        "reason": "Save the feasible plan with delivered script for the campaign about 绉嬫棩鎽勫奖寰侀泦 within budget 10 and before deadline 2030-11-04 18:00:00.",
-        "quote_id": "q-cards"
+        "reason": "Save the feasible and budget-compliant plan for the autumn photography contest campaign using the 'studio' asset within deadline.",
+        "quote_id": "q-studio"
       },
       "result": {
         "plan": {
-          "quote_id": "q-cards",
-          "asset": "cards",
+          "quote_id": "q-studio",
+          "asset": "studio",
           "activities": [
             {
-              "activity": "轻量图文卡片",
-              "cost": 5,
-              "minutes": 50
+              "activity": "棚拍展示镜头",
+              "cost": 4,
+              "minutes": 80
             },
             {
               "activity": "撰写并校对脚本",
-              "cost": 3,
-              "minutes": 40
+              "cost": 5,
+              "minutes": 60
             }
           ],
-          "total_cost": 8,
-          "minutes": 90,
-          "estimated_finish": "2030-11-04T10:30:00+08:00",
+          "total_cost": 9,
+          "minutes": 140,
+          "estimated_finish": "2030-11-04T11:20:00+08:00",
           "time_gap_seconds": 0,
           "budget_gap": 0,
           "feasible": true,
-          "theme": "绉嬫棩鎽勫奖寰侀泦",
+          "theme": "秋日摄影征集",
           "script": [
             {
-              "shot": "轻量图文卡片",
-              "caption": "绉嬫棩鎽勫奖寰侀泦"
+              "shot": "棚拍展示镜头",
+              "caption": "秋日摄影征集"
             },
             {
               "shot": "主题说明卡",
-              "caption": "本期聚焦绉嬫棩鎽勫奖寰侀泦，你最想了解哪一点？"
+              "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
             }
           ],
-          "plan_id": "c39a180e-6893-4943-8681-db9f37b082da"
+          "plan_id": "f1ed2842-7d6e-4c2e-b539-e767b0d39283"
         }
       }
     }

@@ -25,7 +25,7 @@ python -m content_planner run --input examples/normal/input.json --mode live --d
 python examples/reproduce.py --mode live
 ```
 
-复现实验分别使用独立的临时数据库与固定业务时钟，只改变标准素材价格。脚本会更新 examples 下相应模式的实际记录。两组 live 实验均已用 gpt-4.1-mini 完成，均直接选择经济素材并保存费用 8 的方案。Mock 为确定性策略。HTTP 测试使用本地替身。
+复现实验分别使用独立的临时数据库与固定业务时钟，只改变标准素材价格。脚本会更新 examples 下相应模式的实际记录。最新 live 对照已记录标准报价 9 时直接完成、报价 12 时改选费用 8 的方案。重复实验曾出现提前停止，稳定性限制见评估文档。Mock 为确定性策略。HTTP 测试使用本地替身。
 
 ## 评审顺序
 

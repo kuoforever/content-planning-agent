@@ -12,6 +12,14 @@
       "status": "success"
     },
     {
+      "action": "search_assets",
+      "status": "success"
+    },
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
       "action": "generate_script",
       "status": "success"
     },
@@ -21,6 +29,28 @@
     }
   ],
   "quotes": {
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
+      "activities": [
+        {
+          "activity": "棚拍展示镜头",
+          "cost": 7,
+          "minutes": 80
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 5,
+          "minutes": 60
+        }
+      ],
+      "total_cost": 12,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 2,
+      "feasible": false
+    },
     "q-cards": {
       "quote_id": "q-cards",
       "asset": "cards",
@@ -48,11 +78,11 @@
     "q-cards": [
       {
         "shot": "轻量图文卡片",
-        "caption": "绉嬫棩鎽勫奖寰侀泦"
+        "caption": "秋日摄影征集"
       },
       {
         "shot": "主题说明卡",
-        "caption": "本期聚焦绉嬫棩鎽勫奖寰侀泦，你最想了解哪一点？"
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
       }
     ]
   },
@@ -77,17 +107,17 @@
     "time_gap_seconds": 0,
     "budget_gap": 0,
     "feasible": true,
-    "theme": "绉嬫棩鎽勫奖寰侀泦",
+    "theme": "秋日摄影征集",
     "script": [
       {
         "shot": "轻量图文卡片",
-        "caption": "绉嬫棩鎽勫奖寰侀泦"
+        "caption": "秋日摄影征集"
       },
       {
         "shot": "主题说明卡",
-        "caption": "本期聚焦绉嬫棩鎽勫奖寰侀泦，你最想了解哪一点？"
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
       }
     ],
-    "plan_id": "d88b3468-a666-46d0-9d06-b3b10caa4517"
+    "plan_id": "69b96dfe-79bd-4ded-9413-572e5050d1a2"
   }
 }
