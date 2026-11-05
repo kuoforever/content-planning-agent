@@ -1,0 +1,17 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "live",
+  "status": "incomplete",
+  "steps": [],
+  "quotes": {},
+  "scripts": {},
+  "trace": [],
+  "model_calls": [
+    {
+      "requested_model": "gpt-4.1-mini",
+      "status": "error",
+      "error": "URLError"
+    }
+  ],
+  "reason": "Model request or response failed: URLError"
+}
