@@ -1,0 +1,152 @@
+[
+  {
+    "case": "normal",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 0.015,
+    "saved_count": 1,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "overbudget",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 0.016,
+    "saved_count": 1,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "impossible",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 0.0,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "late",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 0.015,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "failure",
+    "repeat": 1,
+    "classification": "pass",
+    "seconds": 0.016,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "normal",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 0.016,
+    "saved_count": 1,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "overbudget",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 0.015,
+    "saved_count": 1,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "impossible",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 0.0,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "late",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 0.015,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "failure",
+    "repeat": 2,
+    "classification": "pass",
+    "seconds": 0.016,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "normal",
+    "repeat": 3,
+    "classification": "pass",
+    "seconds": 0.016,
+    "saved_count": 1,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "overbudget",
+    "repeat": 3,
+    "classification": "pass",
+    "seconds": 0.015,
+    "saved_count": 1,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "impossible",
+    "repeat": 3,
+    "classification": "pass",
+    "seconds": 0.016,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "late",
+    "repeat": 3,
+    "classification": "pass",
+    "seconds": 0.016,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  },
+  {
+    "case": "failure",
+    "repeat": 3,
+    "classification": "pass",
+    "seconds": 0.015,
+    "saved_count": 0,
+    "requests": 0,
+    "reported_tokens": 0,
+    "calls_without_usage": 0
+  }
+]
