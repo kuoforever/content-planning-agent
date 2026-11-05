@@ -4,6 +4,7 @@ import sqlite3
 import uuid
 from contextlib import closing
 from datetime import datetime, timedelta, timezone
+from functools import partial
 from pathlib import Path
 
 from .model import ACTIONS, live, mock
@@ -11,14 +12,35 @@ from .model import ACTIONS, live, mock
 CATALOG = Path(__file__).with_name("data") / "catalog.json"
 PROMPT = ("Plan an executable content campaign within budget and deadline. Start with the user's "
           "candidate. Use one provided tool at a time. Base costs and success claims on observations. "
-          "Only save a feasible generated plan. Stop if the task cannot be fulfilled.")
+          "Only save a feasible generated plan. If a candidate exceeds constraints and substitutions "
+          "are allowed, investigate other available tiers and estimate alternatives before declaring "
+          "the task infeasible. Respect explicit restrictions. You may stop on tool failures, "
+          "but explain that the task remains incomplete.")
+
+
+def validate_catalog(entries):
+    if not isinstance(entries, dict) or set(entries) != {"standard", "economy"}:
+        raise ValueError("catalog requires standard and economy tiers")
+    seen = set()
+    for entry in entries.values():
+        if not isinstance(entry, dict):
+            raise ValueError("catalog entries must be objects")
+        for key in ("asset", "description"):
+            if not isinstance(entry.get(key), str) or not entry[key].strip():
+                raise ValueError(f"catalog {key} must be a nonempty string")
+        if entry["asset"] in seen:
+            raise ValueError("catalog asset IDs must be unique")
+        seen.add(entry["asset"])
+        for key in ("asset_cost", "script_cost", "asset_minutes", "script_minutes"):
+            if type(entry.get(key)) is not int or entry[key] < 0:
+                raise ValueError(f"catalog {key} must be a nonnegative integer")
 
 
 def run(task, mode, db, catalog=CATALOG, clock=None, fail_save=False, decide=None):
     clock = clock or (lambda: datetime.now(timezone.utc))
     start = clock()
     out = {"request_id": task.get("request_id"), "mode": mode, "status": "incomplete",
-           "steps": [], "quotes": {}, "scripts": {}, "trace": []}
+           "steps": [], "quotes": {}, "scripts": {}, "trace": [], "model_calls": []}
     missing = [k for k in ("request_id", "theme", "budget", "deadline")
                if task.get(k) is None or task.get(k) == ""]
     if missing:
@@ -32,6 +54,7 @@ def run(task, mode, db, catalog=CATALOG, clock=None, fail_save=False, decide=Non
         if deadline.tzinfo is None:
             raise ValueError("deadline requires a timezone")
         entries = json.loads(Path(catalog).read_text(encoding="utf-8-sig"))
+        validate_catalog(entries)
         signature = hashlib.sha256(json.dumps([task, mode, entries], sort_keys=True).encode()).hexdigest()
         with closing(sqlite3.connect(db, timeout=15)) as conn:
             conn.execute("CREATE TABLE IF NOT EXISTS plans (request_id TEXT PRIMARY KEY, signature TEXT, plan TEXT)")
@@ -46,10 +69,10 @@ def run(task, mode, db, catalog=CATALOG, clock=None, fail_save=False, decide=Non
 
             if cached := existing():
                 return dict(out, status="completed", plan=cached, reused=True)
-            context = dict(task, candidate_asset="studio", available_tiers=list(entries), current_time=start.isoformat())
+            context = dict(task, candidate_asset=entries["standard"]["asset"], available_tiers=list(entries), current_time=start.isoformat())
             messages = [{"role": "system", "content": PROMPT},
                         {"role": "user", "content": json.dumps(context, ensure_ascii=False)}]
-            choose = decide or (live if mode == "live" else mock)
+            choose = decide or (partial(live, telemetry=out["model_calls"]) if mode == "live" else mock)
             assets = {v["asset"]: v for v in entries.values()}
 
             def timing(quote):
@@ -113,7 +136,11 @@ def run(task, mode, db, catalog=CATALOG, clock=None, fail_save=False, decide=Non
                 if "plan" in result:
                     return dict(out, status="completed", plan=result["plan"])
                 if "stopped" in result:
-                    return dict(out, reason=result["stopped"])
+                    all_infeasible = len(out["quotes"]) == len(assets) and all(
+                        not q["feasible"] for q in out["quotes"].values())
+                    return dict(out, reason=result["stopped"],
+                                stop_classification="all_candidates_infeasible" if all_infeasible else "model_stopped",
+                                feasibility_verified=all_infeasible)
                 messages.extend([{"role": "assistant", "content": None, "tool_calls": [{
                     "id": call_id, "type": "function", "function": {"name": name, "arguments": json.dumps(args)}}]},
                     {"role": "tool", "tool_call_id": call_id, "content": json.dumps(result, ensure_ascii=False)}])

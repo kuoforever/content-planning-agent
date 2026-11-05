@@ -1,0 +1,11 @@
+[
+  {
+    "case": "normal",
+    "repeat": 1,
+    "status": "incomplete",
+    "exit_code": 2,
+    "quote_sequence": [],
+    "replanned": false,
+    "model_requests": 1
+  }
+]

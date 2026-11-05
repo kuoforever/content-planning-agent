@@ -27,7 +27,7 @@ def definitions():
     return result
 
 
-def live(messages):
+def live(messages, telemetry=None):
     base = os.getenv("LLM_BASE_URL")
     model = os.getenv("LLM_MODEL")
     if not base or not model:
@@ -39,9 +39,15 @@ def live(messages):
                "max_completion_tokens": 180, "parallel_tool_calls": False}
     req = urllib.request.Request(base.rstrip("/") + "/chat/completions",
                                  json.dumps(payload).encode(), headers)
+    call_record = {"requested_model": model}
+    if telemetry is not None:
+        telemetry.append(call_record)
     try:
         with urllib.request.urlopen(req, timeout=45) as response:
-            msg = json.load(response)["choices"][0]["message"]
+            body = json.load(response)
+        call_record.update(response_id=body.get("id"), model=body.get("model"),
+                           usage=body.get("usage"), status="received")
+        msg = body["choices"][0]["message"]
         calls = msg.get("tool_calls", [])
         if len(calls) != 1:
             raise ValueError("Expected one tool call.")
@@ -51,21 +57,26 @@ def live(messages):
         args = json.loads(call["function"]["arguments"])
         return call["function"]["name"], args, call["id"]
     except urllib.error.HTTPError as exc:
+        call_record.update(status="error", error=f"HTTP {exc.code}")
         raise ValueError(f"Model endpoint returned HTTP {exc.code}") from exc
+    except (ValueError, OSError, KeyError, TypeError, IndexError, AttributeError) as exc:
+        call_record.update(status="error", error=type(exc).__name__)
+        raise ValueError(f"Model request or response failed: {type(exc).__name__}") from exc
 
 
 def mock(messages):
+    candidate = json.loads(messages[1]["content"])["candidate_asset"]
     observations = [json.loads(m["content"]) for m in messages if m["role"] == "tool"]
     last = observations[-1] if observations else {}
     if not observations:
-        name, args = "estimate_plan", {"asset": "studio", "reason": "评估用户给定的标准候选方案"}
+        name, args = "estimate_plan", {"asset": candidate, "reason": "评估用户给定的标准候选方案"}
     elif "error" in last:
         name, args = "stop", {"reason": last["error"]}
     elif "script" in last:
         name, args = "save_plan", {"quote_id": last["quote_id"], "reason": "脚本已生成"}
     elif last.get("feasible"):
         name, args = "generate_script", {"quote_id": last["quote_id"], "reason": "报价和耗时可行"}
-    elif "quote_id" in last and last["asset"] == "studio":
+    elif "quote_id" in last and last["asset"] == candidate:
         name, args = "search_assets", {"tier": "economy", "reason": "当前报价或耗时超限"}
     elif "description" in last:
         name, args = "estimate_plan", {"asset": last["asset"], "reason": "核算替代素材"}

@@ -1,0 +1,137 @@
+{
+  "mode": "mock",
+  "model": "deterministic-mock",
+  "commit": "e8a5f80b2dffb67b2863c5a883de3a713ee0a11f",
+  "dirty": true,
+  "prompt": "Plan an executable content campaign within budget and deadline. Start with the user's candidate. Use one provided tool at a time. Base costs and success claims on observations. Only save a feasible generated plan. If a candidate exceeds constraints and substitutions are allowed, investigate other available tiers and estimate alternatives before declaring the task infeasible. Respect explicit restrictions. You may stop on tool failures, but explain that the task remains incomplete.",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "search_assets",
+        "description": "Search the synthetic asset catalog by tier.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string",
+              "description": "Brief operational justification."
+            },
+            "tier": {
+              "type": "string",
+              "enum": [
+                "standard",
+                "economy"
+              ]
+            }
+          },
+          "required": [
+            "reason",
+            "tier"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "estimate_plan",
+        "description": "Quote the catalog asset with its matching script package.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string",
+              "description": "Brief operational justification."
+            },
+            "asset": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason",
+            "asset"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "generate_script",
+        "description": "Generate an editable script for a feasible quote.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string",
+              "description": "Brief operational justification."
+            },
+            "quote_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason",
+            "quote_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "save_plan",
+        "description": "Persist a previously generated plan for this quote.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string",
+              "description": "Brief operational justification."
+            },
+            "quote_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason",
+            "quote_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "stop",
+        "description": "End without saving when the goal cannot be achieved.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string",
+              "description": "Brief operational justification."
+            }
+          },
+          "required": [
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ],
+  "max_steps": 12,
+  "max_output_tokens": 180,
+  "source_sha256": {
+    "src\\content_planner\\__init__.py": "a047311eb4720e46d9cc8a649541c277b68165d9a120a0bacba7037c9709de7b",
+    "src\\content_planner\\__main__.py": "c365420ecd6cd12e5cad5ec64ab20543c83c2fd2a0b5e5dad553da3e5239375e",
+    "src\\content_planner\\model.py": "ac216e130afaff3598c751b0ab08818d6cc85c1431d4a587a41a099770d2f482",
+    "src\\content_planner\\runner.py": "0a50936df8bbc89e8e0d078364c84ee1ce9dc3923312d0829322d491d110e478"
+  }
+}
