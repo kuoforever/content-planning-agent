@@ -25,7 +25,7 @@ python -m content_planner run --input examples/normal/input.json --mode live --d
 python examples/reproduce.py --mode live
 ```
 
-复现实验分别使用独立的临时数据库与固定业务时钟，只改变标准素材价格。脚本会在 examples/runs 下创建独立批次目录，每次保留输入、目录、完整输出和失败记录。使用 --repeat 2 可重复对照两轮；每轮最多 12 次模型请求。manifest.json 记录源码摘要、提交、提示词、工具定义及模型配置，stdout.json 中 model_calls 记录请求次数和服务返回的 token 用量。最新 live 对照已记录标准报价 9 时直接完成、报价 12 时改选费用 8 的方案。重复实验曾出现提前停止，稳定性限制见评估文档。Mock 为确定性策略。HTTP 测试使用本地替身。
+复现实验分别使用独立的临时数据库与固定业务时钟，只改变标准素材价格。脚本会在 examples/runs 下创建独立批次目录，每次保留输入、目录、完整输出和失败记录。使用 --repeat 2 可重复对照两轮；每个任务最多 12 次模型请求；一轮真实对照包含两个任务，最多 24 次请求。manifest.json 记录源码摘要、提交、提示词、工具定义及模型配置，stdout.json 中 model_calls 记录请求次数和服务返回的 token 用量。最新 live 对照已记录标准报价 9 时直接完成、报价 12 时改选费用 8 的方案。重复实验曾出现提前停止，稳定性限制见评估文档。Mock 为确定性策略。HTTP 测试使用本地替身。
 
 ## 评审顺序
 
