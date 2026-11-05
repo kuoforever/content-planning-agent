@@ -1,5 +1,6 @@
 import argparse
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -7,6 +8,7 @@ from .runner import CATALOG, run
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=["run"])
     parser.add_argument("--input", type=Path, required=True)
