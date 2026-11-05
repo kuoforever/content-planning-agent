@@ -1,0 +1,187 @@
+{
+  "request_id": "campaign-demo",
+  "mode": "mock",
+  "status": "completed",
+  "steps": [
+    {
+      "action": "estimate_plan",
+      "status": "success"
+    },
+    {
+      "action": "generate_script",
+      "status": "success"
+    },
+    {
+      "action": "save_plan",
+      "status": "success"
+    }
+  ],
+  "quotes": {
+    "q-studio": {
+      "quote_id": "q-studio",
+      "asset": "studio",
+      "activities": [
+        {
+          "activity": "棚拍展示镜头",
+          "cost": 4,
+          "minutes": 80
+        },
+        {
+          "activity": "撰写并校对脚本",
+          "cost": 5,
+          "minutes": 60
+        }
+      ],
+      "total_cost": 9,
+      "minutes": 140,
+      "estimated_finish": "2030-11-04T11:20:00+08:00",
+      "time_gap_seconds": 0,
+      "budget_gap": 0,
+      "feasible": true
+    }
+  },
+  "scripts": {
+    "q-studio": [
+      {
+        "shot": "棚拍展示镜头",
+        "caption": "秋日摄影征集"
+      },
+      {
+        "shot": "主题说明卡",
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+      }
+    ]
+  },
+  "trace": [
+    {
+      "step": 1,
+      "action": "estimate_plan",
+      "arguments": {
+        "asset": "studio",
+        "reason": "评估用户给定的标准候选方案"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "asset": "studio",
+        "activities": [
+          {
+            "activity": "棚拍展示镜头",
+            "cost": 4,
+            "minutes": 80
+          },
+          {
+            "activity": "撰写并校对脚本",
+            "cost": 5,
+            "minutes": 60
+          }
+        ],
+        "total_cost": 9,
+        "minutes": 140,
+        "estimated_finish": "2030-11-04T11:20:00+08:00",
+        "time_gap_seconds": 0,
+        "budget_gap": 0,
+        "feasible": true
+      }
+    },
+    {
+      "step": 2,
+      "action": "generate_script",
+      "arguments": {
+        "quote_id": "q-studio",
+        "reason": "报价和耗时可行"
+      },
+      "result": {
+        "quote_id": "q-studio",
+        "script": [
+          {
+            "shot": "棚拍展示镜头",
+            "caption": "秋日摄影征集"
+          },
+          {
+            "shot": "主题说明卡",
+            "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+          }
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "save_plan",
+      "arguments": {
+        "quote_id": "q-studio",
+        "reason": "脚本已生成"
+      },
+      "result": {
+        "plan": {
+          "quote_id": "q-studio",
+          "asset": "studio",
+          "activities": [
+            {
+              "activity": "棚拍展示镜头",
+              "cost": 4,
+              "minutes": 80
+            },
+            {
+              "activity": "撰写并校对脚本",
+              "cost": 5,
+              "minutes": 60
+            }
+          ],
+          "total_cost": 9,
+          "minutes": 140,
+          "estimated_finish": "2030-11-04T11:20:00+08:00",
+          "time_gap_seconds": 0,
+          "budget_gap": 0,
+          "feasible": true,
+          "theme": "秋日摄影征集",
+          "script": [
+            {
+              "shot": "棚拍展示镜头",
+              "caption": "秋日摄影征集"
+            },
+            {
+              "shot": "主题说明卡",
+              "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+            }
+          ],
+          "plan_id": "c6c86226-cf58-4064-aa32-51ef856b56de"
+        }
+      }
+    }
+  ],
+  "model_calls": [],
+  "plan": {
+    "quote_id": "q-studio",
+    "asset": "studio",
+    "activities": [
+      {
+        "activity": "棚拍展示镜头",
+        "cost": 4,
+        "minutes": 80
+      },
+      {
+        "activity": "撰写并校对脚本",
+        "cost": 5,
+        "minutes": 60
+      }
+    ],
+    "total_cost": 9,
+    "minutes": 140,
+    "estimated_finish": "2030-11-04T11:20:00+08:00",
+    "time_gap_seconds": 0,
+    "budget_gap": 0,
+    "feasible": true,
+    "theme": "秋日摄影征集",
+    "script": [
+      {
+        "shot": "棚拍展示镜头",
+        "caption": "秋日摄影征集"
+      },
+      {
+        "shot": "主题说明卡",
+        "caption": "本期聚焦秋日摄影征集，你最想了解哪一点？"
+      }
+    ],
+    "plan_id": "c6c86226-cf58-4064-aa32-51ef856b56de"
+  }
+}

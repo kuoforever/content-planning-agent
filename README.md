@@ -31,3 +31,5 @@ python examples/reproduce.py --mode live
 
 先看 [评估与实际记录](docs/03-evaluation.md)，再看 [设计](docs/02-solution.md)。其余文档涵盖 [需求](docs/01-requirements.md)、[AI 使用](docs/04-ai-usage.md) 和 [复盘](docs/05-retrospective.md)。查看提交号用 `git rev-parse HEAD`。
 
+
+重复运行与调用预算请见 [重规划稳定性评估](docs/06-stability.md)。
